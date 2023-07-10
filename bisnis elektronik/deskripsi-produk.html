@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SmartBuy - Deskripsi Produk</title>
+  <style>
+    /* CSS styles */
+
+    /* ... */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    section {
+      padding: 20px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .product-details {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .product-details img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    
+    .product-info {
+      flex: 1;
+    }
+    
+    .product-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .product-description {
+      color: #888;
+      margin-bottom: 10px;
+    }
+    
+    .product-price {
+      font-weight: bold;
+      color: #c00;
+      margin-bottom: 10px;
+    }
+    
+    .buttons {
+      margin-top: 20px;
+    }
+    
+    .buy-button,
+    .cart-button {
+      background-color: #c00;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    
+    .testimonials {
+      margin-top: 20px;
+    }
+    
+    .testimonial {
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .testimonial p {
+      margin: 0;
+    }
+    
+    .testimonial span {
+      font-weight: bold;
+    }
+    
+    .suggested-products {
+      margin-top: 20px;
+    }
+    
+    .suggested-products h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .suggested-products ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .suggested-products li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    .suggested-products li img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    .popup-content {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML content -->
+
+  <header>
+    <h1>SmartBuy</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="halaman-pengaduan.html">Customer Service</a></li>
+    </ul>
+  </nav>
+  
+  <section>
+    <div class="product-details">
+      <img src="gambar-produk1.jpg" alt="Produk 1">
+      <div class="product-info">
+        <h2 class="product-title">Outfit kuliah Pria</h2>
+        <p class="product-description">Outfit kuliah pria formal. Chat terlebih dahulu untuk ketersediaan produk.</p>
+        <p class="product-price">Harga: Rp.250.000 - 280.000</p>
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button class="buy-button" onclick="openPopup()">Beli Sekarang</button>
+      <button class="cart-button" onclick="addToCart()">Tambah ke Keranjang</button>
+    </div>
+    
+    <div class="testimonials">
+      <div class="testimonial">
+        <p><span>John Doe:</span> Produk ini sangat bagus dan sesuai dengan deskripsi. Saya sangat puas dengan pembelian saya.</p>
+      </div>
+      <div class="testimonial">
+        <p><span>Jane Smith:</span> Pengiriman cepat dan pelayanan pelanggan yang baik. Produk berkualitas tinggi.</p>
+      </div>
+    </div>
+    <div class="suggested-products">
+        <h3>Produk lain yang mungkin Anda minati:</h3>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="gambar-produk2.jpg" alt="Produk 2">
+              <p>Nama Produk 2</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="gambar-produk3.jpg" alt="Produk 3">
+              <p>Nama Produk 3</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="gambar-produk4.jpg" alt="Produk 4">
+              <p>Nama Produk 4</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 SmartBuy. All rights reserved.</p>
+  </footer>
+
+  <div class="popup" id="sizePopup">
+    <div class="popup-content">
+      <h3>Pilih Ukuran</h3>
+      <p>Silakan pilih ukuran yang Anda inginkan:</p>
+      <select id="sizeSelect" onchange="updatePrice()">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <br><br>
+      <p id="selectedPrice">Harga: Rp. </p>
+      <button onclick="addToCart()">Tambah ke Keranjang</button>
+      <button onclick="checkout()">Checkout</button>
+      <button onclick="closePopup()">Batal</button>
+    </div>
+  </div>
+  
+
+  <script>
+   // JavaScript code
+
+var sizePrices = {
+  S: 250000,
+  M: 260000,
+  L: 270000,
+  XL: 280000
+};
+
+function openPopup() {
+  var popup = document.getElementById("sizePopup");
+  popup.style.display = "block";
+}
+
+function closePopup() {
+  var popup = document.getElementById("sizePopup");
+  popup.style.display = "none";
+}
+
+function updatePrice() {
+  var selectedSize = document.getElementById("sizeSelect").value;
+  var selectedPrice = sizePrices[selectedSize];
+  var priceElement = document.getElementById("selectedPrice");
+  priceElement.textContent = "Harga: Rp. " + selectedPrice;
+}
+
+function addToCart() {
+  var selectedSize = document.getElementById("sizeSelect").value;
+  var selectedPrice = sizePrices[selectedSize];
+  // Lakukan logika tambah ke keranjang dengan ukuran dan harga yang dipilih
+  alert("Produk dengan ukuran " + selectedSize + " telah ditambahkan ke keranjang dengan harga Rp. " + selectedPrice);
+  closePopup();
+}
+
+function checkout() {
+  // Lakukan logika proses checkout
+  // Contoh: Mengarahkan pengguna ke halaman jasa-kirim.html
+  window.location.href = "jasa-kirim.html";
+  closePopup();
+}
+
+  </script>
+</body>
+</html>

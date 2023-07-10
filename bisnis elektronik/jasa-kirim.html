@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Halaman Jasa Kirim</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    section {
+      padding: 20px;
+    }
+    
+    .shipping-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .shipping-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .shipping-form input[type="text"],
+    .shipping-form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    
+    .shipping-form input[type="submit"] {
+      background-color: #c00;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Halaman Jasa Kirim</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+    </ul>
+  </nav>
+  
+  <section>
+    <h2>Formulir Jasa Kirim</h2>
+    
+    <form class="shipping-form">
+      <label for="name">Nama Penerima:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="address">Alamat Pengiriman:</label>
+      <textarea id="address" name="address" required></textarea>
+      
+      <label for="city">Kota:</label>
+      <input type="text" id="city" name="city" required>
+      
+      <label for="province">Provinsi:</label>
+      <input type="text" id="province" name="province" required>
+      
+      <label for="postal-code">Kode Pos:</label>
+      <input type="text" id="postal-code" name="postal-code" required>
+      
+      <button class="buy-button"onclick="window.location.href='halaman-Pembayaran.html'">Beli Sekarang</button>
+    </form>
+  </section>
+</body>
+</html>
